@@ -12,7 +12,7 @@ html {
     width: 90vw;
     margin-left: 5vw;
     height: 15vh;
-    background-color: #ffa726;
+    xw
     border-radius: 20px;
     text-align: center;
     font-size: 4vh;
@@ -77,6 +77,12 @@ html {
     font-size: 3vh;
     font-family: 'Ubuntu';
 }
+
+a{
+    color: #f44336;
+}
+
+
 
 
 
