@@ -1,14 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
 html {
-     background: url("../assets/background.png") no-repeat center center fixed; 
+     background: url("../assets/background.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-
+.about{
+    width: 90vw;
+    margin-left: 5vw;
+    height: 15vh;
+    background-color: #ffa726;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 4vh;
+    font-family: 'Ubuntu';
+    color: white;
+}
 
 #title{
     text-align: center;
@@ -24,89 +34,49 @@ html {
     font-size: 6vh;
 }
 
-#about{
-    margin-top: 11vh;
-    height: 4vh;
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    -o-animation-duration: 2s;
-    animation-duration: 2s;
-}
 
 .center{
     text-align: center;
 }
 
-#projects{
-    right: 37vw;
-    margin-top: 17vh;
-    height: 4vh;
-    position: fixed;
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    -o-animation-duration: 2s;
-    animation-duration: 2s;
+
+
+#blog{
+    margin-left: 5vw;
+    display: inline-block;
 }
 
-#contact{
-    left: 37vw;
-    margin-top: 17vh;
-    height: 4vh;
-    position: fixed;
-    -webkit-animation-duration: 2s;
-    -moz-animation-duration: 2s;
-    -o-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-    
-        .tooltip{
-            display: inline;
-            position: relative;
-        }
-        
-        .tooltip:hover:after{
-            background: #333;
-            background: rgba(0,0,0,.8);
-            border-radius: 5px;
-            bottom: 26px;
-            color: #fff;
-            content: attr(title);
-            left: 20%;
-            padding: 5px 15px;
-            position: absolute;
-            z-index: 98;
-            width: 220px;
-        }
-        
-        .tooltip:hover:before{
-            border: solid;
-            border-color: #333 transparent;
-            border-width: 6px 6px 0 6px;
-            bottom: 20px;
-            content: "";
-            left: 50%;
-            position: absolute;
-            z-index: 99;
-        }
-
-img{
-    height: 4vh;
-
-}
-
-#abou{
-    color: white;
-    font-size: 3vh;
-    font-family: "Ubuntu";
-    margin-left: 70vw;
-    margin-right: 10vw;
-    position: fixed;
+.main{
+    margin-top: 20vh;
 }
 
 #buts{
-    visibility: hidden;
-    margin-left: 5vw;
+    text-align: center;
     border-radius: 10px;
 }
+
+#projects{
+    margin-left: 5vw;
+    display: inline-block;
+}
+
+.icons{
+    height: 18vh;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+}
+
+.icons:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.mid{
+    margin-left:4vh;
+    color:white;
+    font-size: 3vh;
+    font-family: 'Ubuntu';
+}
+
+
 

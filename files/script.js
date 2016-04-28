@@ -4,11 +4,6 @@ function me() {
     $('#about').removeClass('animated bounceInDown');
 }
 
-function contac() {
-	document.getElementById("buts").style.visibility="visible";
-    $('#buts').addClass('animated bounceInDown');
-    $('#m').removeClass('animated bounceInDown');
-}
 
     $(document).ready(function() {
         $("body").css("display", "none");
