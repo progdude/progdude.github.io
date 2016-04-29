@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Two Sum-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Two Sum-LeetCode</h1>
+    <p class="post__date">April 28, 2016</p>
+    <div class="post__content"?>
+        <p><a href="http://example.com" title="Title">LeetCode Link</a></p>
+<p>A pretty straightforward solution. Use a HashMap with the key representing the</p>
+<pre><div class="codes"><code>(target-nums[i])  </code></div></pre>
+<p>and the value representing the index at which it appeared.</p>
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> public class Solution {  
+ 
+    public int[] twoSum(int[] nums, int target) {  
+
+    HashMap&lt;Integer,Integer&gt; values = new HashMap&lt;Integer,Integer&gt;();    
+    int[] retArr = new int[2];
+    
+    for(int i=0; i&lt;nums.length; i++){
+
+        if(values.containsKey(nums[i])){
+            retArr[0] = values.get(nums[i]);
+            retArr[1] = i;
+            break;
+        }
+        else{
+            values.put(target-nums[i], i);
+        }
+    }
+    return retArr;
+  }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
