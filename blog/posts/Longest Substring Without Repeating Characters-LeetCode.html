@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Longest Substring Without Repeating Characters-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Longest Substring Without Repeating Characters-LeetCode</h1>
+    <p class="post__date">April 28, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" title="Title">LeetCode Link</a></p>
+<p>Just have an array to keep track of all the previous letters we hit. After we reach a previously hit letter, simply start over with a new position.</p>
+<pre><div class="codes"><code>public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        
+        int result = 0;
+        boolean[] hit = new boolean[256];
+        
+        char[] c = s.toCharArray();
+        
+        int incre = 0;
+        for(int i=0; i< c.length; i++){
+            for(int j=i; j< c.length; j++){
+                if(hit[c[j]]){
+                    result = Math.max(result, incre);
+                    incre = 0;
+                    Arrays.fill(hit,false);
+                    break;
+                }
+                else{
+                    hit[c[j]]=true;
+                    incre++;
+                }
+            }
+        }
+        result = Math.max(result, incre);
+        return result;
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
