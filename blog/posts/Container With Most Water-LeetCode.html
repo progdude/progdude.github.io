@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Container With Most Water-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Container With Most Water-LeetCode</h1>
+    <p class="post__date">April 30, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/container-with-most-water/" title="Title">LeetCode Link</a></p>
+<p>Start off with both ends and keep moving to the middle, while on every iteration checking the new max result.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> /**
+public class Solution {
+    public int maxArea(int[] height) {
+        
+        int left = 0;
+        int right = height.length-1;
+        
+        int result = 0;
+        
+        while(left!=right){
+
+            int area = Math.min(height[left], height[right])*(right-left);
+            result = Math.max(result, area);
+            if(height[left]< height[right]){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+        
+        return result;
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
