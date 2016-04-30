@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Swap Nodes in Pairs-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Swap Nodes in Pairs-LeetCode</h1>
+    <p class="post__date">April 30, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/swap-nodes-in-pairs/" title="Title">LeetCode Link</a></p>
+<p>Simply switch the place of two nodes. The real "gotcha" of this problem is to make sure you store the last node of the previously switched nodes so that you can connect each switch.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> /**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode swapPairs(ListNode head) {
+        
+        if(head==null){
+            return null;
+        }
+        
+        if(head.next==null){
+            return head;
+        }
+        
+        ListNode result = head.next;
+        ListNode temp = new ListNode(0);
+        
+        while(true){
+            ListNode two = head.next;
+            head.next = two.next;
+            two.next = head;
+            temp.next = two;
+            
+
+            temp = head;
+
+            head = head.next;
+            if(head==null || head.next==null){
+                break;
+            }
+            
+            
+        }
+        
+        return result;
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
