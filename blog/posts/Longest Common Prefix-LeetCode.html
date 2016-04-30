@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Longest Common Prefix-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Longest Common Prefix-LeetCode</h1>
+    <p class="post__date">April 30, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/longest-common-prefix/" title="Title">LeetCode Link</a></p>
+<p>First found the smallest string, just to avoid the IndexOutOfBound Exception and then just iterated through every string to make sure all their characters matched.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> public class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        
+        if(strs.length==0){
+            return "";
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        
+        int min = Integer.MAX_VALUE;
+        
+        for(int i=0;i< strs.length; i++){
+            min = Math.min(strs[i].length(), min);
+        }
+        
+
+        for(int j=0; j< min; j++){
+            char c = strs[0].charAt(j);
+            for(int i=1; i< strs.length; i++){
+                if(strs[i].charAt(j)!=c){
+                    return sb.toString();
+                }
+            }
+            sb.append(c);
+        }
+        
+        
+        return sb.toString();
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
