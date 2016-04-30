@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>ZigZag Conversion-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">ZigZag Conversion-LeetCode</h1>
+    <p class="post__date">April 28, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/zigzag-conversion/" title="Title">LeetCode Link</a></p>
+<p>It took me some time to understand the problem but as soon as I figured out what it was asking, all I had to do was find a pattern and the solution became clear.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code>public class Solution {
+    public String convert(String s, int numRows) {
+        StringBuilder sb = new StringBuilder();
+        
+        char[] c = s.toCharArray();
+        
+        int stepOne = 0;
+        int stepTwo = 0;
+        
+        
+        if(numRows==1){
+            return s;
+        }
+        
+        for(int i=1; i<=numRows; i++){
+            if(i==1 || i==numRows){
+                stepOne = 2*(numRows-1);
+                stepTwo = 2*(numRows-1);
+            }
+            else{
+                stepOne = 2*(numRows-i);
+                stepTwo = 2*(i-1);
+            }
+            
+            int pos = i-1;
+            for(int j=0; j<c.length; j++){
+                if(pos>=c.length){
+                    break;
+                }
+                
+                if(j%2==0){
+                   sb.append(c[pos]);
+                   pos+=stepOne;
+                }
+                
+                else{
+                    sb.append(c[pos]);
+                    pos+=stepTwo;
+                }
+            }
+            
+        }
+        
+        return sb.toString();
+        
+        
+    }
+}
+</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
