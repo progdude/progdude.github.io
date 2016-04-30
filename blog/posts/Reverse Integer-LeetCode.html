@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Reverse Integer-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Reverse Integer-LeetCode</h1>
+    <p class="post__date">April 30, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/reverse-integer/" title="Title">LeetCode Link</a></p>
+<p>This one was had me stumped for a while. My first solution was similar to the one below, but I first found the size of the int by using </p>
+<pre><div class="codes"><code>(int)(Math.log(x)/Math.log(10))+1;</code></div></pre>
+<p>LeetCode kept giving me a TimeRanOut Error everytime I tried to do the above, so I had to develop the below solution. In addition, accounting for numbers beyond the scope of an int became a bit tricky to solve.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code>public class Solution {
+    public int reverse(int x) {
+        
+        long result = 0;
+        
+        while(x!=0){
+            result = result*10+ x%10;
+            x/=10;
+        }
+        
+           if (result > Integer.MAX_VALUE || result < Integer.MIN_VALUE){
+                return 0;
+           }
+        
+        
+        return (int)result;
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
