@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Isomporphic Strings-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Isomporphic Strings-LeetCode</h1>
+    <p class="post__date">May 1, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/isomorphic-strings/" title="Title">LeetCode Link</a></p>
+<p>Just used a hashmap as a mapping technique and created a getKey function to have bijection mapping.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> public class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        HashMap<Character,Character> maps = new HashMap<Character,Character>();
+        
+        
+        for(int i=0; i< s.length(); i++){
+            
+            char c = s.charAt(i);
+            char x = t.charAt(i);
+            
+            if(maps.containsKey(c)){
+                if(x!=maps.get(c)){
+                    return false;
+                }
+            }
+            else if(maps.containsValue(x)){
+                if(c!=getKey(maps, x)){
+                    return false;
+                }
+            }
+            else{
+                maps.put(c,x);
+            }
+        }
+        return true;
+    }
+    
+    
+    static Character getKey(HashMap<Character,Character> maps, char value){
+        for ( char key : maps.keySet() ) {
+            if(maps.get(key)==value){
+                return key;
+            }
+        }
+        return null;
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
