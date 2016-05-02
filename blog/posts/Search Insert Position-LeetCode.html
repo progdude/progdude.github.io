@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Search Insert Position-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Search Insert Position-LeetCode</h1>
+    <p class="post__date">May 1, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/search-insert-position/" title="Title">LeetCode Link</a></p>
+<p>Simply iterating through the array and accounting for test cases.</p>
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> public class Solution {
+    public int searchInsert(int[] nums, int target) {
+        
+        if(target< nums[0]){
+            return 0;
+        }
+        
+        if(target>nums[nums.length-1]){
+            return nums.length;
+        }
+        
+        if(nums[nums.length-1]==target){
+            return nums.length-1;
+        }
+        
+        for(int i=0; i< nums.length-1; i++){
+            if(nums[i]==target){
+                return i;
+            }
+            
+            if(target>nums[i] && target< nums[i+1]){
+                return i+1;
+            }
+        }
+        
+        
+        return 22;//or any other random number
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
