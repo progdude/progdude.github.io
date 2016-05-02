@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Search A 2D Matrix-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Search A 2D Matrix-LeetCode</h1>
+    <p class="post__date">May 2, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/search-a-2d-matrix/" title="Title">LeetCode Link</a></p>
+<p>Found the row the number should belong to, and then performed a binary search on it.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> public class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        
+        int n = matrix[0].length-1;
+        
+        for(int i=0; i< matrix.length; i++){
+            if(matrix[i][n]==target){
+                return true;
+            }
+            else if(target< matrix[i][n]){
+                System.out.println(matrix[i][n]);
+                return binarySearch(matrix[i], target);
+            }
+        }
+     return false;   
+        
+    }
+    
+    static boolean binarySearch(int[] arr, int target){
+        
+        int low = 0;
+        int high = arr.length-1;
+        int mid = (low+high)/2;
+        
+        while(low<=high){
+            
+            if(arr[mid]==target){
+                return true;
+            }
+            
+            if(arr[mid]< target){
+                low = mid+1;
+            }
+            
+            else{
+                high = mid-1;
+            }
+            
+            mid = (high+low)/2;
+            
+        }
+        return false;
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
