@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Count And Say-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Count And Say-LeetCode</h1>
+    <p class="post__date">May 3, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/count-and-say/" title="Title">LeetCode Link</a></p>
+<p>Simply iterate through the array counting the number of times a single digit appears and then append it to a stringbuilder.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> public class Solution {
+    public String countAndSay(int n) {
+        String s = "1";
+        
+
+        
+        for(int iter = 1; iter< n; iter++){
+            StringBuilder base = new StringBuilder();
+            int count = 1;
+            for(int i=0; i< s.length()-1; i++){
+                if(s.charAt(i)==s.charAt(i+1)){
+                    count++;
+                }
+                else{
+                    base.append(count);
+                    base.append(s.charAt(i));
+                    count = 1;
+                }
+            }
+            base.append(count);
+            base.append(s.charAt(s.length()-1));
+            s = base.toString();
+        }
+        
+        return s;
+ 
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
