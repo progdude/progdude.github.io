@@ -36,7 +36,7 @@
 <p>Full Solution in Java:</p>
 <pre><div class="codes"><code> public class Solution {
     public boolean isIsomorphic(String s, String t) {
-        HashMap<Character,Character> maps = new HashMap<Character,Character>();
+HashMap< Character,Character> maps = new HashMap< Character,Character>();
         
         
         for(int i=0; i< s.length(); i++){
@@ -62,7 +62,7 @@
     }
     
     
-    static Character getKey(HashMap<Character,Character> maps, char value){
+    static Character getKey(HashMap< Character,Character> maps, char value){
         for ( char key : maps.keySet() ) {
             if(maps.get(key)==value){
                 return key;

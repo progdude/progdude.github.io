@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Rotated Matrix-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Rotated Matrix-LeetCode</h1>
+    <p class="post__date">May 4, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/rotated-matrix/" title="Title">LeetCode Link</a></p>
+<p>First, flip the matrix across the middle, and then flip it across it's y=x diagonal.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> public class Solution {
+    public void rotate(int[][] matrix) {
+        
+        for(int i=0; i< matrix.length; i++){
+            for(int j=0; j< matrix[i].length/2; j++){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[i][matrix[i].length-j-1];
+                matrix[i][matrix[i].length-j-1] = temp;
+            }
+        }
+        
+        int iter = matrix[0].length-1;
+        for(int i=0; i< matrix.length; i++){
+            iter--;
+            for(int j=0; j<=iter; j++){
+                int displacement = matrix.length-1-(i+j);
+                int temp = matrix[i+displacement][j+displacement];
+                matrix[i+displacement][j+displacement] = matrix[i][j];
+                matrix[i][j] = temp;
+                
+            }
+        }
+        
+        
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
