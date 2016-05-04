@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    
+        <title>Jump Game-LeetCode</title>
+    
+
+    <meta name="description" content="cool web design">
+
+    
+
+
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="post">
+    <a class="post__back" href="http://architrathi.com/blog/blog_home.html">&lt;-- back</a>
+    <h1 class="post__title">Jump Game-LeetCode</h1>
+    <p class="post__date">May 4, 2016</p>
+    <div class="post__content"?>
+        <p><a href="https://leetcode.com/problems/jump-game/" title="Title">LeetCode Link</a></p>
+<p>This one was a bit tricky. I kept track of the maximum index we could jump, and if it ever exceeded the size of the array, we return true.</p>
+
+<p>Full Solution in Java:</p>
+<pre><div class="codes"><code> public class Solution {
+    public boolean canJump(int[] nums) {
+        
+        int ind = nums[0];
+        
+        for(int i=0; i<nums.length; i++){
+            
+            if(ind>=nums.length-1){
+                return true;
+            }
+            
+            if(i==ind && nums[i]==0){
+                return false;
+            }
+            
+            if(i+nums[i]>ind){
+                ind = i+nums[i];
+            }
+            
+            
+            
+        }
+        return false;
+    }
+}</code></div></pre>
+
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+</html>
